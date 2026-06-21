@@ -1,0 +1,90 @@
+<svg viewBox="0 0 920 640" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, system-ui, sans-serif">
+  <rect width="920" height="640" fill="#f8fafc"/>
+  <text x="460" y="36" text-anchor="middle" font-size="21" font-weight="700" fill="#0f172a">Pipeline cloud asynchrone — Traitement de documents</text>
+  <text x="460" y="58" text-anchor="middle" font-size="13" fill="#64748b">FastAPI · React · Azure Functions · Service Bus · Cosmos DB · SignalR · Gemini</text>
+
+  <!-- React -->
+  <rect x="360" y="80" width="200" height="54" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="460" y="104" text-anchor="middle" font-size="14" font-weight="600" fill="#1e3a8a">React (Vite)</text>
+  <text x="460" y="122" text-anchor="middle" font-size="11" fill="#1e3a8a">upload + suivi temps réel</text>
+
+  <!-- FastAPI -->
+  <rect x="40" y="170" width="200" height="66" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="140" y="194" text-anchor="middle" font-size="14" font-weight="600" fill="#166534">FastAPI</text>
+  <text x="140" y="212" text-anchor="middle" font-size="11" fill="#166534">POST /jobs · SAS</text>
+  <text x="140" y="227" text-anchor="middle" font-size="11" fill="#166534">/documents/{id}/retry</text>
+
+  <!-- SignalR -->
+  <rect x="360" y="180" width="200" height="50" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="460" y="210" text-anchor="middle" font-size="13" font-weight="600" fill="#5b21b6">Azure SignalR (Serverless)</text>
+
+  <!-- Blob Storage -->
+  <rect x="680" y="170" width="200" height="56" rx="10" fill="#cffafe" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="780" y="194" text-anchor="middle" font-size="14" font-weight="600" fill="#155e75">Blob Storage</text>
+  <text x="780" y="212" text-anchor="middle" font-size="11" fill="#155e75">conteneur "input"</text>
+
+  <!-- Blob Trigger -->
+  <rect x="680" y="280" width="200" height="64" rx="10" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="780" y="304" text-anchor="middle" font-size="13" font-weight="700" fill="#854d0e">Function</text>
+  <text x="780" y="322" text-anchor="middle" font-size="12" fill="#854d0e">Blob Trigger</text>
+  <text x="780" y="337" text-anchor="middle" font-size="10" fill="#854d0e">→ Service Bus + QUEUED</text>
+
+  <!-- Service Bus -->
+  <rect x="680" y="390" width="200" height="60" rx="10" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="780" y="414" text-anchor="middle" font-size="13" font-weight="600" fill="#9a3412">Service Bus Queue</text>
+  <text x="780" y="432" text-anchor="middle" font-size="10" fill="#9a3412">documents-queue · maxDelivery=5</text>
+
+  <!-- Processing Function -->
+  <rect x="360" y="380" width="230" height="120" rx="10" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="475" y="404" text-anchor="middle" font-size="13" font-weight="700" fill="#854d0e">Function — Traitement IA</text>
+  <text x="475" y="426" text-anchor="middle" font-size="11" fill="#854d0e">PROCESSING (notif)</text>
+  <text x="475" y="444" text-anchor="middle" font-size="11" fill="#854d0e">→ tags IA (Gemini)</text>
+  <text x="475" y="462" text-anchor="middle" font-size="11" fill="#854d0e">→ Cosmos update</text>
+  <text x="475" y="480" text-anchor="middle" font-size="11" fill="#854d0e">→ PROCESSED (notif + tags)</text>
+
+  <!-- DLQ -->
+  <rect x="680" y="500" width="200" height="50" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="780" y="524" text-anchor="middle" font-size="12" font-weight="600" fill="#991b1b">Dead Letter Queue</text>
+  <text x="780" y="540" text-anchor="middle" font-size="10" fill="#991b1b">après 5 échecs</text>
+
+  <!-- DLQ Alert -->
+  <rect x="360" y="540" width="230" height="56" rx="10" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="475" y="564" text-anchor="middle" font-size="13" font-weight="700" fill="#854d0e">Function — DLQ Alert</text>
+  <text x="475" y="582" text-anchor="middle" font-size="10" fill="#854d0e">status=ERROR + notif React</text>
+
+  <!-- Gemini -->
+  <rect x="40" y="410" width="200" height="50" rx="10" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+  <text x="140" y="434" text-anchor="middle" font-size="13" font-weight="600" fill="#3730a3">Google Gemini API</text>
+  <text x="140" y="450" text-anchor="middle" font-size="10" fill="#3730a3">gemini-2.5-flash + fallback</text>
+
+  <!-- Cosmos -->
+  <rect x="40" y="290" width="200" height="56" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="140" y="314" text-anchor="middle" font-size="13" font-weight="600" fill="#166534">Cosmos DB</text>
+  <text x="140" y="332" text-anchor="middle" font-size="10" fill="#166534">db-doc / jobs · pk=/pk</text>
+
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#475569"/>
+    </marker>
+  </defs>
+  <g stroke="#475569" stroke-width="1.6" fill="none" marker-end="url(#ar)">
+    <path d="M400,134 L180,170"/>           <!-- react -> fastapi -->
+    <path d="M520,134 L740,170"/>           <!-- react -> blob (upload SAS) -->
+    <path d="M780,226 L780,280"/>           <!-- blob -> trigger -->
+    <path d="M780,344 L780,390"/>           <!-- trigger -> SB -->
+    <path d="M680,420 L590,440"/>           <!-- SB -> processing -->
+    <path d="M780,450 L780,500"/>           <!-- SB -> DLQ -->
+    <path d="M680,525 L590,560"/>           <!-- DLQ -> DLQ alert -->
+    <path d="M360,440 L240,435"/>           <!-- processing -> gemini -->
+    <path d="M380,380 L200,346"/>           <!-- processing -> cosmos -->
+    <path d="M475,540 L180,346" stroke-dasharray="3 3"/> <!-- dlq alert -> cosmos -->
+  </g>
+  <!-- notifications SignalR (pointillé violet) -->
+  <g stroke="#7c3aed" stroke-width="1.4" fill="none" marker-end="url(#ar)" stroke-dasharray="4 3">
+    <path d="M460,380 L460,230"/>           <!-- processing -> signalr -->
+    <path d="M475,540 L470,230"/>           <!-- dlq alert -> signalr -->
+    <path d="M460,180 L460,134"/>           <!-- signalr -> react -->
+    <path d="M740,300 L560,205"/>           <!-- blob trigger -> signalr -->
+  </g>
+  <text x="600" y="160" font-size="10" fill="#7c3aed">— — notifications temps réel (SignalR)</text>
+</svg>
