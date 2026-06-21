@@ -182,3 +182,8 @@
     border-right-color: var(--border);
   }
 }
+h1 {
+  line-height: 1.4 !important;
+  margin: 0 0 24px 0 !important;
+  white-space: normal !important;
+}
