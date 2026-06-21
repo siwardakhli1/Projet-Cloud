@@ -16,10 +16,7 @@ def create_job(req:JobCreateRequest):
     except CosmosHttpResponseError as e:
         raise HTTPException(status_code=500, detail=f"Cosmos error: {getattr(e, 'message', str(e))}")
     
-    # Convention : le blob est nommé "{documentId}_{fileName}" et déposé
-    # dans le conteneur "input" (le nom du conteneur est ajouté par
-    # generate_url_upload_sas, on ne le remet donc PAS ici).
-    # Exemple résultat : input/abc-123_cv.pdf
+
     blob_path = f"{entity['id']}_{req.fileName}"
     upload_url = generate_url_upload_sas(blob_path)
     

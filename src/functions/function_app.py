@@ -7,8 +7,7 @@ Function : blob_trigger_documents
   - publie un message JSON dans la file Service Bus "documents-queue"
   - passe le document en statut QUEUED dans Cosmos DB
 
-NB : la notification temps réel "UPLOADED" vers React (SignalR) sera
-ajoutée plus tard, quand la ressource SignalR sera créée (fonctionnalité 4).
+
 """
 import datetime
 import json
